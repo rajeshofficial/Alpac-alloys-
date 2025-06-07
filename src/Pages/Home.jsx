@@ -240,7 +240,7 @@ const Home = () => {
                 </div>
               </div>
 
-              <div data-aos="fade-left" data-aos-delay="1200">
+              <div data-aos="fade-up" data-aos-delay="1200">
                 <h2 className="text-3xl font-bold text-gray-800 mb-8">Our Capabilities</h2>
                 <div className="grid grid-cols-2 gap-6">
                   <div className="bg-gray-50 p-6 rounded-lg text-center">
