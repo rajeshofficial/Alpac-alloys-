@@ -21,8 +21,8 @@ const Testimonials = () => {
 return (
     <div className="bg-white  ">
       {/* Heading + Breadcrumb */}
-      <div className="container mx-auto px-4 mb-8 bg-[#f2f4f6] p-5">
-        <div className="flex flex-col lg:flex-row justify-between items-center">
+      <div className="bg-gray-100 py-6">
+        <div className="container mx-auto px-4 flex flex-col lg:flex-row justify-between items-center">
           <h1 className="text-3xl font-bold text-gray-600 mb-4 lg:mb-0">Testimonials</h1>
           <nav className="text-sm text-gray-600">
             <ol className="flex space-x-2">
