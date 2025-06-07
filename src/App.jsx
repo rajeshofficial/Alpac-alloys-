@@ -7,14 +7,14 @@ import { Routes, Route } from 'react-router-dom';
 
 
 import Home from './Pages/Home';
-import About from './pages/About';
-import Processes from './pages/Processes';
-import TechnicalData from './pages/TechnicalData';
-import Industries from './pages/Industries';
-import Quality from './pages/Quality';
+import About from './Pages/About';
+import Processes from './Pages/Processes';
+import TechnicalData from './Pages/TechnicalData';
+import Industries from './Pages/Industries';
+import Quality from './Pages/Quality';
 import Testimonials from './Pages/Testimonials';
 import Contact from './Pages/Contact';
-import Export from './pages/Export';
+import Export from './Pages/Export';
 
 function App() {
   return (
