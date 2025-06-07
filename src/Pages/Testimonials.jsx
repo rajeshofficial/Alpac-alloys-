@@ -18,7 +18,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <div className="bg-white py-12 ">
+    <div className="bg-white  ">
       {/* Heading + Breadcrumb */}
       <div className="container mx-auto px-4 mb-8 bg-[#f2f4f6] p-5">
         <div className="flex flex-col lg:flex-row justify-between items-center">
