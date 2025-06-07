@@ -15,7 +15,7 @@ const Home = () => {
 
   const slides = [
     {
-      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&h=800&fit=crop',
+      image: sample1,
       title: 'Advanced Aluminum Casting Solutions',
       caption: 'Precision engineering meets innovative manufacturing - transforming your designs into reality',
     },
@@ -35,7 +35,7 @@ const Home = () => {
       caption: 'ISO 9001:2015 certified quality management ensuring excellence in every casting',
     },
     {
-      image: sample1,
+      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&h=800&fit=crop',
       title: 'Innovation in Every Casting',
       caption: 'From prototype to production - we turn your complex designs into cost-effective solutions',
     },
