@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import ImageSlider from '../components/ImageSlider';
+import sample1 from '../assets/sample1.png'
 
 const Home = () => {
   useEffect(() => {
@@ -24,17 +25,17 @@ const Home = () => {
       caption: 'Over 40 years of expertise in sand casting and gravity die casting processes',
     },
     {
-      image: 'https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=1920&h=800&fit=crop',
-      title: 'Quality Without Compromise',
-      caption: 'ISO 9001:2015 certified quality management ensuring excellence in every casting',
-    },
-    {
       image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1920&h=800&fit=crop',
       title: 'Global Manufacturing Partner',
       caption: 'Serving industries worldwide with precision aluminum castings and exceptional service',
     },
     {
-      image: 'https://images.unsplash.com/photo-1553159425-333ea91e827d?w=1920&h=800&fit=crop',
+      image: 'https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=1920&h=800&fit=crop',
+      title: 'Quality Without Compromise',
+      caption: 'ISO 9001:2015 certified quality management ensuring excellence in every casting',
+    },
+    {
+      image: sample1,
       title: 'Innovation in Every Casting',
       caption: 'From prototype to production - we turn your complex designs into cost-effective solutions',
     },
