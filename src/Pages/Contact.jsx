@@ -81,14 +81,21 @@ const handleSubmit = async (e) => {
 
   return (
     <div className="bg-gray-50 min-h-screen">
+      <div className="bg-gray-100 py-6">
+        <div className="container mx-auto px-4 flex flex-col lg:flex-row justify-between items-center">
+          <h1 className="text-3xl font-bold text-gray-600 mb-4 lg:mb-0">Contact</h1>
+          <nav className="text-sm text-gray-600">
+            <ol className="flex space-x-2">
+              <li>
+                <a href="/" className="text-red-600 hover:underline">Home</a>
+              </li>
+              <li>/</li>
+              <li className="text-gray-800 font-semibold">Contact</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
       <div className="max-w-7xl mx-auto px-6 py-8">
-        <h1
-          className="text-3xl font-bold text-gray-800 mb-8"
-          data-aos="fade-down"
-        >
-          Contact Us
-        </h1>
-
         {/* Introduction */}
         <div
           className="bg-white p-8 rounded-lg shadow-sm mb-8"
