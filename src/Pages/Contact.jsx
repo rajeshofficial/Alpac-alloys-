@@ -32,6 +32,8 @@ const Contact = () => {
 
   const [result, setResult] = useState("");
 
+  const accessKey = import.meta.env.VITE_ACCESS_KEY;
+
 const handleSubmit = async (e) => {
   e.preventDefault();
   setResult("Sending...");
@@ -44,7 +46,7 @@ const handleSubmit = async (e) => {
   }
 
   
-  formDataToSend.append("access_key", "43d6f14e-690c-452a-9e43-17e7898c8969");
+  formDataToSend.append("access_key", accessKey);
 
   try {
     const response = await fetch("https://api.web3forms.com/submit", {
