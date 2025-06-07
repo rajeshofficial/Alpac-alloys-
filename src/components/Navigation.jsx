@@ -32,7 +32,7 @@ const Navigation = () => {
             </Link>
           </li>
 
-          {/* Industries dropdown with group hover */}
+          
           <li className="relative group" data-aos="fade-up" data-aos-delay="100">
             <Link to="/industries" className="hover:text-gray-300 font-medium transition-colors">
               Industries
