@@ -30,11 +30,52 @@ const Contact = () => {
     })
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log('Form submitted:', formData)
-    alert('Thank you for your enquiry. We will contact you shortly.')
+  const [result, setResult] = useState("");
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setResult("Sending...");
+
+  const formDataToSend = new FormData();
+
+
+  for (const key in formData) {
+    formDataToSend.append(key, formData[key]);
   }
+
+  
+  formDataToSend.append("access_key", "43d6f14e-690c-452a-9e43-17e7898c8969");
+
+  try {
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formDataToSend,
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully.");
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        phone: '',
+        subject: '',
+        message: '',
+        castingType: '',
+        quantity: ''
+      });
+    } else {
+      console.error("Submission error:", data);
+      setResult(data.message || "Something went wrong.");
+    }
+  } catch (error) {
+    console.error("Fetch error:", error);
+    setResult("Something went wrong. Please try again.");
+  }
+};
+
 
   return (
     <div className="bg-gray-50 min-h-screen">
