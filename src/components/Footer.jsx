@@ -90,8 +90,8 @@ const Footer = () => {
            © {currentYear} Alpac Alloys Ltd. All rights reserved.
           </div>
           <div className="text-gray-400 text-sm mt-2 md:mt-0">
-            <a href="https://abhinav-portfolio-f5fk.onrender.com" target="_blank" rel="noopener noreferrer" className="hover:text-white">
-              Web Design By Abhinav
+            <a href="https://indiantechsolutions.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white">
+              Web Design By Indian Tech Solution
             </a>
           </div>
         </div>
