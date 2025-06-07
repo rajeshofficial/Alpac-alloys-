@@ -34,9 +34,9 @@ const Navigation = () => {
 
           {/* Industries dropdown with group hover */}
           <li className="relative group" data-aos="fade-up" data-aos-delay="100">
-            <a href="/industries" className="hover:text-gray-300 font-medium transition-colors">
+            <Link to="/industries" className="hover:text-gray-300 font-medium transition-colors">
               Industries
-            </a>
+            </Link>
             <div className="absolute left-0 top-full bg-white text-gray-800 shadow-lg z-[9999] mt-2 rounded-md min-w-48 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200">
               <ul className="py-2">
                 {industries.map((industry, idx) => (
