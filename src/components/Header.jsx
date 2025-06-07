@@ -1,75 +1,139 @@
-import React, { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom'; // import useLocation for active link detection
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FiMenu, FiX } from 'react-icons/fi';
-import logo from '../assets/logo.png';
-
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const location = useLocation(); // get current path
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
 
   useEffect(() => {
-    AOS.init({ duration: 1000, once: true });
+    AOS.init({ duration: 700, once: true });
   }, []);
 
-  const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'About Us', path: '/about' },
-    { name: 'Testimonials', path: '/testimonials' },
-    { name: 'Contact Us', path: '/contact' },
-  ];
-
   return (
-    <header className="sticky top-0 bg-white shadow z-50" data-aos="fade-down">
-      <div
-        className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between"
-        data-aos="zoom-in"
-      >
-        {/* Logo + Company Name */}
-        <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="Alpac Alloys Logo" className="w-10 h-10 object-contain" />
-          <span className="text-2xl font-bold text-red-600">ALPAC ALLOYS</span>
-        </Link>
+    <div className="bg-white border-b">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex items-center justify-between py-4 px-4 sm:px-6">
+          {/* Logo */}
+          <div className="flex-shrink-0">
+            <Link to="/">
+              <img
+                src="https://ext.same-assets.com/2966790152/1160124125.png"
+                alt="Alpac Alloys Ltd"
+                className="h-14 sm:h-16"
+              />
+            </Link>
+          </div>
 
-        {/* Mobile Menu Toggle */}
-        <div className="lg:hidden">
-          <button onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
-            {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-          </button>
+          {/* Mobile Toggle Button */}
+          <div className="md:hidden">
+            <button
+              onClick={toggleMenu}
+              className="text-gray-700 hover:text-gray-900 focus:outline-none"
+            >
+              {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+            </button>
+          </div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-6">
+            <nav className="flex space-x-6">
+              <Link
+                to="/"
+                className="text-gray-600 hover:text-gray-900 text-sm font-medium"
+                data-aos="fade-up"
+              >
+                Home
+              </Link>
+              <Link
+                to="/about-us"
+                className="text-gray-600 hover:text-gray-900 text-sm font-medium"
+                data-aos="fade-up"
+              >
+                About Us
+              </Link>
+              <Link
+                to="/testimonials"
+                className="text-gray-600 hover:text-gray-900 text-sm font-medium"
+                data-aos="fade-up"
+              >
+                Testimonials
+              </Link>
+              <Link
+                to="/contact-us"
+                className="text-gray-600 hover:text-gray-900 text-sm font-medium"
+                data-aos="fade-up"
+              >
+                Contact Us
+              </Link>
+            </nav>
+          </div>
+
+          {/* Contact Info (hidden on small) */}
+          <div className="hidden lg:flex flex-col text-right text-sm text-gray-600 space-y-1">
+            <div>
+              <span className="font-medium">T:</span>{' '}
+              <a href="tel:+441283567737" className="hover:text-gray-900">
+                +44 (0) 1283 567737
+              </a>
+            </div>
+            <div>
+              <span className="font-medium">F:</span>{' '}
+              <span>+44 (0) 1283 512359</span>
+            </div>
+            <div>
+              <span className="font-medium">E:</span>{' '}
+              <a href="mailto:sales@alpacgroup.com" className="hover:text-gray-900">
+                sales@alpacgroup.com
+              </a>
+            </div>
+          </div>
         </div>
 
-        {/* Navigation */}
-        <nav
-          className={`flex-col lg:flex-row lg:flex gap-6 items-start lg:items-center absolute lg:static top-18 left-0 w-full lg:w-auto bg-white px-6 lg:px-0 ${
-            menuOpen ? 'flex' : 'hidden'
-          }`}
-        >
-          {navLinks.map((link, index) => {
-            const isActive = location.pathname === link.path;
-
-            return (
+        {/* Mobile Navigation Menu */}
+        {isOpen && (
+          <div className="md:hidden px-4 pb-4">
+            <nav className="flex flex-col space-y-2">
               <Link
-                key={link.name}
-                to={link.path}
+                to="/"
+                className="text-gray-600 hover:text-gray-900 text-sm font-medium"
+                onClick={toggleMenu}
                 data-aos="fade-up"
-                data-aos-delay={index * 100}
-                className={`
-                  relative py-2 transition duration-300
-                  ${isActive ? 'text-red-600 after:w-full' : 'text-gray-700 hover:text-red-600'}
-                  after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px]
-                  after:bg-red-600 after:transition-all after:duration-300
-                  ${isActive ? '' : 'after:w-0 hover:after:w-full'}
-                `}
               >
-                {link.name}
+                Home
               </Link>
-            );
-          })}
-        </nav>
+              <Link
+                to="/about-us"
+                className="text-gray-600 hover:text-gray-900 text-sm font-medium"
+                onClick={toggleMenu}
+                data-aos="fade-up"
+              >
+                About Us
+              </Link>
+              <Link
+                to="/testimonials"
+                className="text-gray-600 hover:text-gray-900 text-sm font-medium"
+                onClick={toggleMenu}
+                data-aos="fade-up"
+              >
+                Testimonials
+              </Link>
+              <Link
+                to="/contact-us"
+                className="text-gray-600 hover:text-gray-900 text-sm font-medium"
+                onClick={toggleMenu}
+                data-aos="fade-up"
+              >
+                Contact Us
+              </Link>
+            </nav>
+          </div>
+        )}
       </div>
-    </header>
+    </div>
   );
 };
 

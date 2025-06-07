@@ -1,14 +1,14 @@
+
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const About = () => {
-  useEffect(() => {
+      useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
-
   return (
-    <main>
+     <main>
       {/* Page Title */}
       <div className="bg-gray-100 py-6">
         <div className="container mx-auto px-4 flex flex-col lg:flex-row justify-between items-center">
@@ -44,7 +44,7 @@ const About = () => {
         </div>
       </section>
     </main>
-  );
-};
+  )
+}
 
-export default About;
+export default About

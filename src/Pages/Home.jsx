@@ -1,133 +1,308 @@
-import React, { useState, useEffect } from 'react';
-import image1 from '../assets/i1.jpg';
-import image2 from '../assets/image2.jpg';
-import image3 from '../assets/image3.jpg';
-import image4 from '../assets/image4.jpg';
-import About from '../components/About';
-import Service from '../components/Service';
-import Footer from '../components/Footer';
-
-const slides = [
-  {
-    img: image1,
-    title: 'Welcome to Sailor',
-  },
-  {
-    img: image2,
-    title: 'Understanding your design requirements',
-  },
-  {
-    img: image3,
-    title: 'Complicated fabrication into simple casting, saving money',
-  },
-  {
-    img: image4,
-    title: 'Complicated fabrication into simple casting, saving money',
-  }
-];
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import ImageSlider from '../components/ImageSlider';
 
 const Home = () => {
-  const [current, setCurrent] = useState(0);
-  const length = slides.length;
-
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setCurrent((prev) => (prev === length - 1 ? 0 : prev + 1));
-    }, 5000);
-    return () => clearTimeout(timer);
-  }, [current]);
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  }, []);
 
-  const prevSlide = () => {
-    setCurrent(current === 0 ? length - 1 : current - 1);
-  };
-
-  const nextSlide = () => {
-    setCurrent(current === length - 1 ? 0 : current + 1);
-  };
+  const slides = [
+    {
+      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&h=800&fit=crop',
+      title: 'Advanced Aluminum Casting Solutions',
+      caption: 'Precision engineering meets innovative manufacturing - transforming your designs into reality',
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=1920&h=800&fit=crop',
+      title: 'State-of-the-Art Foundry Technology',
+      caption: 'Over 40 years of expertise in sand casting and gravity die casting processes',
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=1920&h=800&fit=crop',
+      title: 'Quality Without Compromise',
+      caption: 'ISO 9001:2015 certified quality management ensuring excellence in every casting',
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1920&h=800&fit=crop',
+      title: 'Global Manufacturing Partner',
+      caption: 'Serving industries worldwide with precision aluminum castings and exceptional service',
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1553159425-333ea91e827d?w=1920&h=800&fit=crop',
+      title: 'Innovation in Every Casting',
+      caption: 'From prototype to production - we turn your complex designs into cost-effective solutions',
+    },
+  ];
 
   return (
-   <>
-    <section className="relative bg-gray-900 text-white">
-      <div className="relative overflow-hidden h-[70vh] md:h-[80vh]">
-        {slides.map((slide, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              index === current ? 'opacity-100 z-20' : 'opacity-0 z-10 pointer-events-none'
-            }`}
-          >
-            <img
-              src={slide.img}
-              alt={slide.title}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-center px-6 md:px-20 lg:px-32 h-full">
-              <h2 className="text-3xl md:text-5xl font-bold mb-4">{slide.title}</h2>
-              <p className="max-w-xl text-sm md:text-lg mb-6">{slide.desc}</p>
-              <a
-                href="#featured-services"
-                className="inline-block bg-red-600 hover:bg-red-700 transition px-6 py-3 rounded text-white font-semibold"
+    <div>
+      {/* Full-Screen Hero Slider */}
+      <div className="relative">
+        <div className="h-screen">
+          <ImageSlider slides={slides} fullScreen={true} />
+        </div>
+
+        {/* Hero Content Overlay */}
+        <div className="absolute inset-0 bg-black/50 bg-opacity-40 flex items-center justify-center">
+          <div className="text-center text-white px-6 max-w-4xl" data-aos="fade-down">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6">Alpac Alloys Ltd</h1>
+            <p className="text-xl md:text-2xl mb-8 leading-relaxed">
+              The Art of Aluminum Casting - Precision, Quality, Innovation
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                to="/processes"
+                className="bg-red-600 text-white px-8 py-4 rounded-lg font-medium text-lg hover:bg-red-700 transition-colors"
               >
-                Get Started
+                Explore Our Processes
+              </Link>
+              <Link
+                to="/contact-us"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg font-medium text-lg hover:bg-white hover:text-gray-900 transition-colors"
+              >
+                Get a Quote
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6 py-16">
+          {/* Company Overview */}
+          <div className="text-center mb-16" data-aos="fade-up">
+            <h2 className="text-4xl font-bold text-gray-800 mb-8">
+              Precision Aluminum Casting Excellence
+            </h2>
+            <div className="max-w-4xl mx-auto">
+              <p className="text-xl text-gray-600 leading-relaxed mb-8">
+                Alpac Alloys Ltd has been at the forefront of aluminum casting technology for over four decades.
+                We specialize in sand casting and gravity die casting, delivering precision components that meet
+                the most demanding specifications across multiple industries.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-8" data-aos="fade-up" data-aos-delay="200">
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-red-600 mb-2">40+</div>
+                  <div className="text-gray-600">Years Experience</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-red-600 mb-2">500kg</div>
+                  <div className="text-gray-600">Maximum Casting Weight</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-red-600 mb-2">40+</div>
+                  <div className="text-gray-600">Countries Served</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-red-600 mb-2">99.5%</div>
+                  <div className="text-gray-600">Quality Rate</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Services Overview */}
+          <div className="mb-16" data-aos="fade-up" data-aos-delay="300">
+            <h2 className="text-3xl font-bold text-gray-800 mb-12 text-center">Our Core Services</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Processes */}
+              <Link
+                to="/processes"
+                className="group bg-white p-8 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                data-aos="zoom-in"
+                data-aos-delay="400"
+              >
+                <div className="relative overflow-hidden rounded-lg mb-6">
+                  <img
+                    src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=400&h=250&fit=crop"
+                    alt="Casting Processes"
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                  <div className="absolute bottom-4 left-4">
+                    <h3 className="text-xl font-semibold text-white">Casting Processes</h3>
+                  </div>
+                </div>
+                <p className="text-gray-600 leading-relaxed">
+                  Advanced sand casting and gravity die casting techniques for precision components.
+                  From prototyping to high-volume production with exceptional quality control.
+                </p>
+                <div className="mt-4 text-red-600 font-medium group-hover:text-red-700">Learn More →</div>
+              </Link>
+
+              {/* Technical Data */}
+              <Link
+                to="/technical-data"
+                className="group bg-white p-8 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                data-aos="zoom-in"
+                data-aos-delay="500"
+              >
+                <div className="relative overflow-hidden rounded-lg mb-6">
+                  <img
+                    src="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=400&h=250&fit=crop"
+                    alt="Technical Specifications"
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                  <div className="absolute bottom-4 left-4">
+                    <h3 className="text-xl font-semibold text-white">Technical Excellence</h3>
+                  </div>
+                </div>
+                <p className="text-gray-600 leading-relaxed">
+                  Comprehensive technical specifications, material properties, and design guidelines.
+                  Access detailed tolerance data and quality standards for optimal casting performance.
+                </p>
+                <div className="mt-4 text-red-600 font-medium group-hover:text-red-700">View Specifications →</div>
+              </Link>
+
+              {/* Industries */}
+              <Link
+                to="/industries"
+                className="group bg-white p-8 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                data-aos="zoom-in"
+                data-aos-delay="600"
+              >
+                <div className="relative overflow-hidden rounded-lg mb-6">
+                  <img
+                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=250&fit=crop"
+                    alt="Industry Applications"
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                  <div className="absolute bottom-4 left-4">
+                    <h3 className="text-xl font-semibold text-white">Industry Solutions</h3>
+                  </div>
+                </div>
+                <p className="text-gray-600 leading-relaxed">
+                  Serving diverse industries from aerospace and automotive to marine and architectural.
+                  Specialized solutions tailored to meet sector-specific requirements and standards.
+                </p>
+                <div className="mt-4 text-red-600 font-medium group-hover:text-red-700">Explore Industries →</div>
+              </Link>
+            </div>
+          </div>
+
+          {/* Why Choose Us */}
+          <div className="bg-white p-12 rounded-lg shadow-sm mb-16" data-aos="fade-up" data-aos-delay="700">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              <div>
+                <h2 className="text-3xl font-bold text-gray-800 mb-8">Why Choose Alpac Alloys?</h2>
+                <div className="space-y-6">
+                  <div className="flex items-start" data-aos="fade-right" data-aos-delay="800">
+                    <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                      <span className="text-red-600 text-xl">🏭</span>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-800 mb-2">Advanced Foundry Technology</h3>
+                      <p className="text-gray-600">
+                        State-of-the-art equipment and processes ensure consistent quality and precision in every casting.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start" data-aos="fade-right" data-aos-delay="900">
+                    <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                      <span className="text-red-600 text-xl">⚡</span>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-800 mb-2">Rapid Prototyping</h3>
+                      <p className="text-gray-600">Quick turnaround on prototypes and design iterations to accelerate your product development.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start" data-aos="fade-right" data-aos-delay="1000">
+                    <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                      <span className="text-red-600 text-xl">🎯</span>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-800 mb-2">Design Optimization</h3>
+                      <p className="text-gray-600">Expert consultation to optimize your designs for casting, reducing costs and improving performance.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start" data-aos="fade-right" data-aos-delay="1100">
+                    <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                      <span className="text-red-600 text-xl">🌍</span>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-800 mb-2">Global Reach</h3>
+                      <p className="text-gray-600">Comprehensive export services and logistics support for customers worldwide.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div data-aos="fade-left" data-aos-delay="1200">
+                <h2 className="text-3xl font-bold text-gray-800 mb-8">Our Capabilities</h2>
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="bg-gray-50 p-6 rounded-lg text-center">
+                    <div className="text-2xl font-bold text-red-600 mb-2">0.5kg - 500kg</div>
+                    <div className="text-gray-600 text-sm">Casting Weight Range</div>
+                  </div>
+                  <div className="bg-gray-50 p-6 rounded-lg text-center">
+                    <div className="text-2xl font-bold text-red-600 mb-2">±0.5mm</div>
+                    <div className="text-gray-600 text-sm">Gravity Die Tolerance</div>
+                  </div>
+                  <div className="bg-gray-50 p-6 rounded-lg text-center">
+                    <div className="text-2xl font-bold text-red-600 mb-2">2-4 weeks</div>
+                    <div className="text-gray-600 text-sm">Sand Casting Lead Time</div>
+                  </div>
+                  <div className="bg-gray-50 p-6 rounded-lg text-center">
+                    <div className="text-2xl font-bold text-red-600 mb-2">24 hours</div>
+                    <div className="text-gray-600 text-sm">Quote Response Time</div>
+                  </div>
+                </div>
+
+                <div className="mt-8">
+                  <h3 className="text-lg font-semibold text-gray-800 mb-4">Supported CAD Formats</h3>
+                  <div className="flex flex-wrap gap-3">
+                    <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">STEP</span>
+                    <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">IGES</span>
+                    <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">SolidWorks</span>
+                    <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">AutoCAD</span>
+                    <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">CATIA</span>
+                    <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Pro-Engineer</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Call to Action */}
+          <div
+            className="text-center bg-gradient-to-r from-red-600 to-red-700 text-white p-12 rounded-lg"
+            data-aos="zoom-in"
+            data-aos-delay="800"
+          >
+            <h2 className="text-3xl font-bold mb-6">Ready to Start Your Casting Project?</h2>
+            <p className="text-xl mb-8 opacity-90">
+              Get expert consultation and a detailed quote for your aluminum casting requirements.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                to="/contact-us"
+                className="bg-white text-red-600 px-8 py-4 rounded-lg font-medium text-lg hover:bg-gray-100 transition-colors"
+              >
+                Request a Quote
+              </Link>
+              <a
+                href="tel:+441283567737"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg font-medium text-lg hover:bg-white hover:text-red-600 transition-colors"
+              >
+                Call +44 (0) 1283 567737
               </a>
             </div>
           </div>
-        ))}
-
-        {/* Previous Button */}
-        <button
-          onClick={prevSlide}
-          className="absolute top-1/2 left-4 -translate-y-1/2 bg-opacity-40 hover:bg-opacity-70 text-white rounded-full p-3 md:p-4 z-30"
-          aria-label="Previous Slide"
-        >
-          <svg
-            className="w-6 h-6 md:w-8 md:h-8"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
-
-        {/* Next Button */}
-        <button
-          onClick={nextSlide}
-          className="absolute top-1/2 right-4 -translate-y-1/2 bg-opacity-40 hover:bg-opacity-70 text-white rounded-full p-3 md:p-4 z-30"
-          aria-label="Next Slide"
-        >
-          <svg
-            className="w-6 h-6 md:w-8 md:h-8"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
-
-        {/* Indicators */}
-        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-4 z-30">
-          {slides.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => setCurrent(idx)}
-              aria-label={`Go to slide ${idx + 1}`}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                idx === current
-                  ? 'bg-red-600 w-12'
-                  : 'bg-gray-400 w-6 hover:bg-red-500'
-              }`}
-            />
-          ))}
         </div>
       </div>
-    </section>
-    <About/>
-    <Service/>
-   </>
+    </div>
   );
 };
 

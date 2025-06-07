@@ -1,7 +1,9 @@
 import React from 'react';
 import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa';
 
-const testimonials = [
+const Testimonials = () => {
+
+    const testimonials = [
   {
     company: 'Catchpole and Rye',
     content:
@@ -16,8 +18,7 @@ const testimonials = [
   },
 ];
 
-const Testimonials = () => {
-  return (
+return (
     <div className="bg-white  ">
       {/* Heading + Breadcrumb */}
       <div className="container mx-auto px-4 mb-8 bg-[#f2f4f6] p-5">
@@ -36,7 +37,7 @@ const Testimonials = () => {
       </div>
 
       {/* Testimonial Cards */}
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 pb-10">
         <div className="grid md:grid-cols-2 gap-8">
           {testimonials.map((item, index) => (
             <div
@@ -62,4 +63,4 @@ const Testimonials = () => {
   );
 };
 
-export default Testimonials;
+export default Testimonials

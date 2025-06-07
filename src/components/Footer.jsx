@@ -1,141 +1,103 @@
-import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-      easing: 'ease-in-out',
-    });
-    AOS.refresh();
-  }, []);
-
+    const currentYear = new Date().getFullYear();
   return (
-    <footer className="bg-gray-900 text-gray-300 py-12">
-      <div className="container mx-auto px-4 max-w-7xl">
-        <div className="flex flex-wrap -mx-4">
-
-          {/* About */}
-          <div
-            className="w-full md:w-1/2 lg:w-1/3 px-4 mb-10 md:mb-0"
-            data-aos="fade-up"
-          >
-            <a href="/" className="text-3xl font-bold text-red-600 inline-block mb-4">
-              ALPAC ALLOYS
-            </a>
-            <div className="space-y-1 text-gray-400">
-              <p>Dale Street</p>
-              <p>Burton on Trent</p>
-              <p>Staffordshire, DE14 3TE</p>
-              <p>
-                <strong>Phone:</strong> <span>+44 (0) 1283 567737</span>
-              </p>
-              <p>
-                <strong>Email:</strong> <span>sales@alpacgroup.com</span>
-              </p>
-            </div>
-            <div className="flex space-x-4 mt-6 text-gray-400">
-              {/* Social Icons */}
-              <a href="#" className="hover:text-red-600 transition" aria-label="Twitter">
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M..." /></svg>
+    <footer className="bg-gray-800 text-white">
+      <div className="max-w-7xl mx-auto px-6 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Company Information */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Alpac Alloys Ltd</h3>
+            <address className="not-italic text-gray-300 leading-relaxed">
+              Dale Street<br />
+              Burton on Trent<br />
+              Staffordshire<br />
+              DE14 3TE
+            </address>
+            <div className="mt-4 flex space-x-4">
+              <a href="https://facebook.com/alpacalloys" className="text-gray-400 hover:text-white">
+                <img
+                  src="https://ext.same-assets.com/2966790152/1566186746.png"
+                  alt="Facebook"
+                  className="w-6 h-6"
+                />
               </a>
-              <a href="#" className="hover:text-red-600 transition" aria-label="Facebook">
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M..." /></svg>
-              </a>
-              <a href="#" className="hover:text-red-600 transition" aria-label="Instagram">
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M..." /></svg>
-              </a>
-              <a href="#" className="hover:text-red-600 transition" aria-label="LinkedIn">
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M..." /></svg>
+              <a href="https://twitter.com/alpacalloys" className="text-gray-400 hover:text-white">
+                <img
+                  src="https://ext.same-assets.com/2966790152/1745832144.png"
+                  alt="Twitter"
+                  className="w-6 h-6"
+                />
               </a>
             </div>
           </div>
 
-          {/* Useful Links */}
-          <div
-            className="w-1/2 sm:w-1/3 md:w-1/6 px-4 mb-10 md:mb-0"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <h4 className="text-xl font-semibold mb-6 text-white">Useful Links</h4>
-            <ul className="space-y-3">
-              {['Home', 'About us', 'Testimonials', 'Contact US', 'Export'].map((link) => (
-                <li key={link}>
-                  <a href="#" className="hover:text-red-600 transition">
-                    {link}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          {/* Contact Information */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Contact Information</h3>
+            <div className="space-y-2 text-gray-300">
+              <div className="flex items-center">
+                <img
+                  src="https://ext.same-assets.com/2966790152/1987378176.png"
+                  alt="Phone"
+                  className="w-4 h-4 mr-2"
+                />
+                <a href="tel:+441283567737" className="hover:text-white">
+                  +44 (0) 1283 567737
+                </a>
+              </div>
+              <div className="flex items-center">
+                <img
+                  src="https://ext.same-assets.com/2966790152/1884383774.png"
+                  alt="Fax"
+                  className="w-4 h-4 mr-2"
+                />
+                <span>+44 (0) 1283 512359</span>
+              </div>
+              <div className="flex items-center">
+                <img
+                  src="https://ext.same-assets.com/2966790152/3338816041.png"
+                  alt="Email"
+                  className="w-4 h-4 mr-2"
+                />
+                <a href="mailto:sales@alpacgroup.com" className="hover:text-white">
+                  sales@alpacgroup.com
+                </a>
+              </div>
+            </div>
           </div>
 
-          {/* Our Services */}
-          <div
-            className="w-1/2 sm:w-1/3 md:w-1/6 px-4 mb-10 md:mb-0"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <h4 className="text-xl font-semibold mb-6 text-white">Other Information</h4>
-            <ul className="space-y-3">
-              {['Processes', 'Technical Data', 'Industries', 'Quality', 'Sitemap'].map((service) => (
-                <li key={service}>
-                  <a href="#" className="hover:text-red-600 transition">
-                    {service}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Newsletter */}
-          <div
-            className="w-full md:w-1/3 px-4"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            <h4 className="text-xl font-semibold mb-6 text-white">Our Newsletter</h4>
-            <p className="mb-4 text-gray-400">
-              Subscribe to our newsletter and receive the latest news about our products and services!
-            </p>
-            <form className="flex flex-col sm:flex-row gap-4" onSubmit={(e) => e.preventDefault()}>
-              <input
-                type="email"
-                placeholder="Your email"
-                className="flex-grow px-4 py-2 rounded-md border border-gray-600 bg-gray-800 text-gray-300 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-600"
-                required
-              />
-              <button
-                type="submit"
-                className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-md transition"
-              >
-                Subscribe
-              </button>
-            </form>
+          {/* Navigation Links */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Site Navigation</h3>
+            <div className="grid grid-cols-2 gap-2 text-sm text-gray-300">
+              <Link to="/" className="hover:text-white">Home</Link>
+              <Link to="/processes" className="hover:text-white">Processes</Link>
+              <Link to="/about-us" className="hover:text-white">About Us</Link>
+              <Link to="/technical-data" className="hover:text-white">Technical Data</Link>
+              <Link to="/testimonials" className="hover:text-white">Testimonials</Link>
+              <Link to="/industries" className="hover:text-white">Industries</Link>
+              <Link to="/contact-us" className="hover:text-white">Contact Us</Link>
+              <Link to="/quality" className="hover:text-white">Quality</Link>
+              <Link to="/export" className="hover:text-white">Export</Link>
+            </div>
           </div>
         </div>
 
-        {/* Copyright (no AOS animation here) */}
-        <div className="border-t border-gray-800 mt-12 pt-6 text-center text-gray-500 text-sm">
-          <p>
-            2025 © Copyright <strong className="text-red-600">Abhinav</strong>. All Rights Reserved
-          </p>
-          <p className="mt-1">
-            Designed by{' '}
-            <a
-              href="https://bootstrapmade.com/"
-              className="hover:text-red-600 transition"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Abhinav Co.
+        <div className="border-t border-gray-700 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center">
+          <div className="text-gray-400 text-sm">
+           © {currentYear} Alpac Alloys Ltd. All rights reserved.
+          </div>
+          <div className="text-gray-400 text-sm mt-2 md:mt-0">
+            <a href="https://abhinav-portfolio-f5fk.onrender.com" target="_blank" rel="noopener noreferrer" className="hover:text-white">
+              Web Design By Abhinav
             </a>
-          </p>
+          </div>
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
