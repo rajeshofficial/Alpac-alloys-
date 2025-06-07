@@ -96,7 +96,7 @@ const Header = () => {
         {/* Mobile Navigation Menu */}
         {isOpen && (
           <div className="md:hidden px-4 pb-4">
-            <nav className="flex flex-col space-y-2">
+             <nav className="flex flex-col items-center text-center space-y-2">
               <Link
                 to="/"
                 className="text-gray-600 hover:text-gray-900 text-sm font-medium"
