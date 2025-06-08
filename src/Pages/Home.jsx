@@ -4,6 +4,11 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import ImageSlider from '../components/ImageSlider';
 import sample1 from '../assets/sample1.png'
+import sample2 from '../assets/a1.jpeg'
+import sample3s from '../assets/sample3.png'
+import sample4s from '../assets/slide4img.jpeg'
+import sample5s from '../assets/slide4i.jpeg'
+
 
 const Home = () => {
   useEffect(() => {
@@ -20,22 +25,22 @@ const Home = () => {
       caption: 'Precision engineering meets innovative manufacturing - transforming your designs into reality',
     },
     {
-      image: 'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=1920&h=800&fit=crop',
+      image: sample4s ,
       title: 'State-of-the-Art Foundry Technology',
       caption: 'Over 40 years of expertise in sand casting and gravity die casting processes',
     },
     {
-      image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1920&h=800&fit=crop',
+      image:  sample3s,
       title: 'Global Manufacturing Partner',
       caption: 'Serving industries worldwide with precision aluminum castings and exceptional service',
     },
     {
-      image: 'https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=1920&h=800&fit=crop',
+      image: sample5s,
       title: 'Quality Without Compromise',
       caption: 'ISO 9001:2015 certified quality management ensuring excellence in every casting',
     },
     {
-      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&h=800&fit=crop',
+      image: sample2,
       title: 'Innovation in Every Casting',
       caption: 'From prototype to production - we turn your complex designs into cost-effective solutions',
     },
