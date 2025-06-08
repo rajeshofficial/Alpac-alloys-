@@ -660,7 +660,6 @@ const TechnicalData = () => {
   <p className="mt-4 text-gray-700">
   Used where heat treatment of the alloys producing high strength and leak proof castings such as water jackets, cylinder heads, fire hose couplings and valve bodies is needed
 
-
   </p>
 </div>
 
