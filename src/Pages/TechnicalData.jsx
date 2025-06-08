@@ -393,8 +393,8 @@ const TechnicalData = () => {
       <thead>
         <tr className="bg-gray-100">
           <th className="border border-gray-300 p-3 text-left">Property</th>
-          <th className="border border-gray-300 p-3 text-left">Sand Cast (LM6M)</th>
-          <th className="border border-gray-300 p-3 text-left">Gravity Die Cast (LM6 M)</th>
+          <th className="border border-gray-300 p-3 text-left">Sand Cast </th>
+          <th className="border border-gray-300 p-3 text-left">Gravity Die Cast</th>
         </tr>
       </thead>
       <tbody>
@@ -435,10 +435,10 @@ const TechnicalData = () => {
       <thead>
         <tr className="bg-gray-100">
           <th className="border border-gray-300 p-3 text-left">Property</th>
-          <th className="border border-gray-300 p-3 text-left">LM25 M</th>
-          <th className="border border-gray-300 p-3 text-left">LM25 TE</th>
-          <th className="border border-gray-300 p-3 text-left">LM25 TB7</th>
-          <th className="border border-gray-300 p-3 text-left">LM25 TF</th>
+          <th className="border border-gray-300 p-3 text-left">Sand Cast</th>
+          <th className="border border-gray-300 p-3 text-left">Sand Cast</th>
+          <th className="border border-gray-300 p-3 text-left">Sand Cast</th>
+          <th className="border border-gray-300 p-3 text-left">Sand Cast</th>
         </tr>
       </thead>
       <tbody>
@@ -481,12 +481,12 @@ const TechnicalData = () => {
   <div className="overflow-x-auto">
     <table className="w-full border-collapse border border-gray-300 text-sm">
       <thead>
-        <tr className="bg-gray-100">
+      <tr className="bg-gray-100">
           <th className="border border-gray-300 p-3 text-left">Property</th>
-          <th className="border border-gray-300 p-3 text-left">LM25 M</th>
-          <th className="border border-gray-300 p-3 text-left">LM25 TE</th>
-          <th className="border border-gray-300 p-3 text-left">LM25 TB7</th>
-          <th className="border border-gray-300 p-3 text-left">LM25 TF</th>
+          <th className="border border-gray-300 p-3 text-left">Gravity Die Cast</th>
+          <th className="border border-gray-300 p-3 text-left">Gravity Die Cast</th>
+          <th className="border border-gray-300 p-3 text-left">Gravity Die Cast</th>
+          <th className="border border-gray-300 p-3 text-left">Gravity Die Cast</th>
         </tr>
       </thead>
       <tbody>
@@ -534,10 +534,10 @@ const TechnicalData = () => {
       <thead>
         <tr className="bg-gray-100">
           <th className="border border-gray-300 p-3 text-left">Property</th>
-          <th className="border border-gray-300 p-3 text-left">LM25 M</th>
-          <th className="border border-gray-300 p-3 text-left">LM25 TE</th>
-          <th className="border border-gray-300 p-3 text-left">LM25 TB7</th>
-          <th className="border border-gray-300 p-3 text-left">LM25 TF</th>
+          <th className="border border-gray-300 p-3 text-left">Sand Cast</th>
+          <th className="border border-gray-300 p-3 text-left">Sand Cast</th>
+          <th className="border border-gray-300 p-3 text-left">Gravity Die Cast</th>
+          <th className="border border-gray-300 p-3 text-left">Gravity Die Cast</th>
         </tr>
       </thead>
       <tbody>
@@ -585,8 +585,8 @@ const TechnicalData = () => {
       <thead>
         <tr className="bg-gray-100">
           <th className="border border-gray-300 p-3 text-left">Property</th>
-          <th className="border border-gray-300 p-3 text-left">LM0 M</th>
-          <th className="border border-gray-300 p-3 text-left">LM0 TF</th>
+          <th className="border border-gray-300 p-3 text-left">	Sand Cast</th>
+          <th className="border border-gray-300 p-3 text-left">Gravity Die Cast</th>
         </tr>
       </thead>
       <tbody>
@@ -629,8 +629,8 @@ const TechnicalData = () => {
       <thead>
         <tr className="bg-gray-100">
           <th className="border border-gray-300 p-3 text-left">Property</th>
-          <th className="border border-gray-300 p-3 text-left">LM0 M</th>
-          <th className="border border-gray-300 p-3 text-left">LM0 TF</th>
+          <th className="border border-gray-300 p-3 text-left">Sand Cast</th>
+          <th className="border border-gray-300 p-3 text-left">Gravity Die Cast</th>
         </tr>
       </thead>
       <tbody>
