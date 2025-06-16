@@ -16,7 +16,7 @@ import t3 from '../assets/t3.jpeg'
 const Home = () => {
   useEffect(() => {
     AOS.init({
-      duration: 800,
+      duration: 600,
       once: true,
     });
   }, []);
@@ -96,7 +96,7 @@ const Home = () => {
                 We specialize in sand casting and gravity die casting, delivering precision components that meet
                 the most demanding specifications across multiple industries.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-8" data-aos="fade-up" data-aos-delay="200">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-8" data-aos="fade-up" data-aos-delay="100">
                 <div className="text-center">
                   <div className="text-4xl font-bold text-red-600 mb-2">40+</div>
                   <div className="text-gray-600">Years Experience</div>
@@ -126,7 +126,7 @@ const Home = () => {
                 to="/processes"
                 className="group bg-white p-8 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
                 data-aos="zoom-in"
-                data-aos-delay="400"
+                data-aos-delay="600"
               >
                 <div className="relative overflow-hidden rounded-lg mb-6">
                   <img
@@ -204,7 +204,7 @@ const Home = () => {
               <div>
                 <h2 className="text-3xl font-bold text-gray-800 mb-8">Why Choose Alpac Alloys?</h2>
                 <div className="space-y-6">
-                  <div className="flex items-start" data-aos="fade-right" data-aos-delay="800">
+                  <div className="flex items-start" data-aos="fade-right" data-aos-delay="600">
                     <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                       <span className="text-red-600 text-xl">🏭</span>
                     </div>
@@ -288,7 +288,7 @@ const Home = () => {
           <div
             className="text-center bg-gradient-to-r from-red-600 to-red-700 text-white p-12 rounded-lg"
             data-aos="zoom-in"
-            data-aos-delay="800"
+            data-aos-delay="600"
           >
             <h2 className="text-3xl font-bold mb-6">Ready to Start Your Casting Project?</h2>
             <p className="text-xl mb-8 opacity-90">
