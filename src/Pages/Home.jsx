@@ -236,7 +236,7 @@ const Home = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-start" data-aos="fade-right" data-aos-delay="1100">
+                  {/* <div className="flex items-start" data-aos="fade-right" data-aos-delay="1100">
                     <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                       <span className="text-red-600 text-xl">🌍</span>
                     </div>
@@ -244,7 +244,7 @@ const Home = () => {
                       <h3 className="text-lg font-semibold text-gray-800 mb-2">Global Reach</h3>
                       <p className="text-gray-600">Comprehensive export services and logistics support for customers worldwide.</p>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
 
