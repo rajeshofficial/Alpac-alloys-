@@ -76,17 +76,17 @@ const Header = () => {
           {/* Contact Info (hidden on small) */}
           <div className="hidden lg:flex flex-col text-right text-sm text-gray-600 space-y-1">
             <div>
-              <span className="font-medium">T:</span>{' '}
+              <span className="font-medium">Teliphone:</span>{' '}
               <a href="tel:+441283567737" className="hover:text-gray-900">
                 +44 (0) 1283 567737
               </a>
             </div>
-            <div>
+            {/* <div>
               <span className="font-medium">F:</span>{' '}
               <span>+44 (0) 1283 512359</span>
-            </div>
+            </div> */}
             <div>
-              <span className="font-medium">E:</span>{' '}
+              <span className="font-medium">Email:</span>{' '}
               <a href="mailto:sales@alpacgroup.com" className="hover:text-gray-900">
                 sales@alpacgroup.com
               </a>

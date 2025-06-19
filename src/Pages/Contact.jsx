@@ -135,7 +135,7 @@ const handleSubmit = async (e) => {
                 </div>
               </div>
             </div>
-            <div>
+            {/* <div>
               <h3 className="text-xl font-semibold text-gray-800 mb-4">Quick Response Times</h3>
               <div className="bg-gray-50 p-6 rounded-lg">
                 <div className="grid grid-cols-2 gap-4 text-center">
@@ -157,7 +157,7 @@ const handleSubmit = async (e) => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -352,7 +352,7 @@ const handleSubmit = async (e) => {
                       </div>
                     </div>
 
-                    <div className="flex items-center">
+                    {/* <div className="flex items-center">
                       <img
                         src="https://ext.same-assets.com/2966790152/1884383774.png"
                         alt="Fax"
@@ -362,7 +362,7 @@ const handleSubmit = async (e) => {
                         <div className="font-medium text-gray-800">Fax</div>
                         <div className="text-gray-600">+44 (0) 1283 512359</div>
                       </div>
-                    </div>
+                    </div> */}
 
                     <div className="flex items-center">
                       <img
@@ -413,7 +413,7 @@ const handleSubmit = async (e) => {
                   <li>• STEP (.stp, .step)</li>
                   <li>• IGES (.igs, .iges)</li>
                   <li>• AutoCAD (.dwg, .dxf)</li>
-                  <li>• SolidWorks (.sldprt, .sldasm)</li>
+                  {/* <li>• SolidWorks (.sldprt, .sldasm)</li> */}
                   <li>• PDF technical drawings</li>
                 </ul>
               </div>

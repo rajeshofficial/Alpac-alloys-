@@ -60,9 +60,9 @@ const Navigation = () => {
             </Link>
           </li>
           <li data-aos="fade-up" data-aos-delay="250">
-            <Link to="/export" className="hover:text-gray-300 font-medium transition-colors">
+            {/* <Link to="/export" className="hover:text-gray-300 font-medium transition-colors">
               Export
-            </Link>
+            </Link> */}
           </li>
         </ul>
       </div>
