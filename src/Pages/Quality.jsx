@@ -40,32 +40,32 @@ const Quality = () => {
               <div className="mt-3 text-xs text-gray-500">Certified Since: 1995</div>
             </div>
 
-            <div className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+            {/* <div className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl font-bold text-blue-600">AS</span>
               </div>
               <h3 className="text-lg font-semibold text-gray-800 mb-2">AS9100D</h3>
               <p className="text-gray-600 text-sm">Aerospace Quality Management</p>
               <div className="mt-3 text-xs text-gray-500">Certified Since: 2010</div>
-            </div>
+            </div> */}
 
-            <div className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+            {/* <div className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl font-bold text-green-600">TS</span>
               </div>
               <h3 className="text-lg font-semibold text-gray-800 mb-2">IATF 16949</h3>
               <p className="text-gray-600 text-sm">Automotive Quality Systems</p>
               <div className="mt-3 text-xs text-gray-500">Certified Since: 2008</div>
-            </div>
+            </div> */}
 
-            <div className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+            {/* <div className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
               <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl font-bold text-purple-600">SC</span>
               </div>
               <h3 className="text-lg font-semibold text-gray-800 mb-2">SC21</h3>
               <p className="text-gray-600 text-sm">Supply Chain Assessment</p>
               <div className="mt-3 text-xs text-gray-500">Bronze Level</div>
-            </div>
+            </div> */}
           </div>
 
           <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -88,10 +88,10 @@ const Quality = () => {
                   <span className="text-red-600 mr-3 mt-1">✓</span>
                   <span><strong>MIL-STD-2175</strong> - Military castings specifications</span>
                 </li>
-                <li className="flex items-start">
+                {/* <li className="flex items-start">
                   <span className="text-red-600 mr-3 mt-1">✓</span>
                   <span><strong>AMS 4218</strong> - Aerospace material specifications</span>
-                </li>
+                </li> */}
               </ul>
             </div>
             <div>
@@ -105,7 +105,7 @@ const Quality = () => {
                   <span className="text-green-600 mr-3 mt-1">✓</span>
                   <span><strong>RoHS Directive</strong> - Restriction of hazardous substances</span>
                 </li>
-                <li className="flex items-start">
+                {/* <li className="flex items-start">
                   <span className="text-green-600 mr-3 mt-1">✓</span>
                   <span><strong>WEEE Directive</strong> - Waste electrical equipment</span>
                 </li>
@@ -116,7 +116,7 @@ const Quality = () => {
                 <li className="flex items-start">
                   <span className="text-green-600 mr-3 mt-1">✓</span>
                   <span><strong>CE Marking</strong> - European conformity</span>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
@@ -224,8 +224,8 @@ const Quality = () => {
                 <li>• X-ray inspection systems</li>
                 <li>• Digital radiography capabilities</li>
                 <li>• Internal defect detection</li>
-                <li>• Porosity and inclusion analysis</li>
-                <li>• ASTM E155 compliant</li>
+                {/* <li>• Porosity and inclusion analysis</li>
+                <li>• ASTM E155 compliant</li> */}
               </ul>
             </div>
 
@@ -234,9 +234,9 @@ const Quality = () => {
               <ul className="text-gray-600 space-y-2 text-sm">
                 <li>• Surface crack detection</li>
                 <li>• Fluorescent and visible dye systems</li>
-                <li>• ASTM E1417 procedures</li>
+                {/* <li>• ASTM E1417 procedures</li>
                 <li>• Critical surface inspection</li>
-                <li>• Automated cleaning systems</li>
+                <li>• Automated cleaning systems</li> */}
               </ul>
             </div>
 
@@ -254,7 +254,7 @@ const Quality = () => {
         </div>
 
         {/* Statistical Process Control */}
-        <div className="bg-white p-8 rounded-lg shadow-sm mb-8">
+        {/* <div className="bg-white p-8 rounded-lg shadow-sm mb-8">
           <h2 className="text-2xl font-bold text-gray-800 mb-6">Statistical Process Control (SPC)</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
@@ -300,7 +300,7 @@ const Quality = () => {
               </ul>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Quality Documentation */}
         <div className="bg-white p-8 rounded-lg shadow-sm">
@@ -335,7 +335,7 @@ const Quality = () => {
                 <li>• Batch tracking and control</li>
                 <li>• Process parameter logging</li>
                 <li>• Digital quality records</li>
-                <li>• 15-year record retention</li>
+                <li>• 5-year record retention</li>
               </ul>
             </div>
           </div>
