@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import { Phone, Mail } from 'lucide-react';
+import image from '../assets/sample1.png'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -17,9 +18,9 @@ const Contact = () => {
 
   useEffect(() => {
     AOS.init({
-      duration: 800,  // animation duration in ms
+      duration: 800,  
       easing: 'ease-in-out',
-      once: true,     // animation only once while scrolling
+      once: true,     
       mirror: false,
     })
   }, [])
@@ -104,12 +105,11 @@ const handleSubmit = async (e) => {
         </div>
       </div>
       <div className="max-w-7xl mx-auto px-6 py-8">
-        {/* Introduction */}
-        <div
+       <div
           className="bg-white p-8 rounded-lg shadow-sm mb-8"
           data-aos="fade-up"
         >
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
               <h2 className="text-2xl font-bold text-gray-800 mb-6">Get In Touch</h2>
               <p className="text-gray-600 text-lg leading-relaxed mb-6">
@@ -136,34 +136,21 @@ const handleSubmit = async (e) => {
                 </div>
               </div>
             </div>
-            {/* <div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">Quick Response Times</h3>
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <div className="grid grid-cols-2 gap-4 text-center">
-                  <div>
-                    <div className="text-2xl font-bold text-red-600 mb-1">24hrs</div>
-                    <div className="text-gray-600 text-sm">Quote Response</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-red-600 mb-1">2-4wks</div>
-                    <div className="text-gray-600 text-sm">Sand Casting</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-red-600 mb-1">4-8wks</div>
-                    <div className="text-gray-600 text-sm">Die Casting Tooling</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-red-600 mb-1">1-2wks</div>
-                    <div className="text-gray-600 text-sm">Production Run</div>
-                  </div>
-                </div>
-              </div>
-            </div> */}
+
+            
+            <div className="flex justify-center items-center">
+              <img
+                src= {image}
+                alt="Contact Illustration"
+                className="w-full h-auto rounded-lg shadow-md object-cover"
+              />
+            </div>
           </div>
         </div>
 
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Contact Form */}
+
           <div
             className="bg-white p-8 rounded-lg shadow-sm"
             data-aos="fade-up"
