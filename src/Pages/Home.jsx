@@ -106,8 +106,8 @@ const Home = () => {
                   <div className="text-gray-600">Maximum Casting Weight</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-red-600 mb-2">40+</div>
-                  <div className="text-gray-600">Countries Served</div>
+                  <div className="text-4xl font-bold text-red-600 mb-2">±0.5mm</div>
+                  <div className="text-gray-600">Gravity Die Tolerance</div>
                 </div>
                 <div className="text-center">
                   <div className="text-4xl font-bold text-red-600 mb-2">99.5%</div>
