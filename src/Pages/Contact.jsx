@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import { Phone, Mail } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -337,48 +338,30 @@ const handleSubmit = async (e) => {
                 </div>
 
                 <div className="border-t border-gray-200 pt-4">
-                  <div className="space-y-3">
-                    <div className="flex items-center">
-                      <img
-                        src="https://ext.same-assets.com/2966790152/1987378176.png"
-                        alt="Phone"
-                        className="w-5 h-5 mr-3"
-                      />
-                      <div>
-                        <div className="font-medium text-gray-800">Phone</div>
-                        <a href="tel:+441283567737" className="text-red-600 hover:text-red-700">
-                          +44 (0) 1283 567737
-                        </a>
+                    <div className="space-y-3">
+                      {/* Phone */}
+                      <div className="flex items-center">
+                        <Phone className="w-5 h-5 mr-3 text-red-600" />
+                        <div>
+                          <div className="font-medium text-gray-800">Phone</div>
+                          <a href="tel:+441283567737" className="text-red-600 hover:text-red-700">
+                            +44 (0) 1283 567737
+                          </a>
+                        </div>
                       </div>
-                    </div>
 
-                    {/* <div className="flex items-center">
-                      <img
-                        src="https://ext.same-assets.com/2966790152/1884383774.png"
-                        alt="Fax"
-                        className="w-5 h-5 mr-3"
-                      />
-                      <div>
-                        <div className="font-medium text-gray-800">Fax</div>
-                        <div className="text-gray-600">+44 (0) 1283 512359</div>
-                      </div>
-                    </div> */}
-
-                    <div className="flex items-center">
-                      <img
-                        src="https://ext.same-assets.com/2966790152/3338816041.png"
-                        alt="Email"
-                        className="w-5 h-5 mr-3"
-                      />
-                      <div>
-                        <div className="font-medium text-gray-800">Email</div>
-                        <a href="mailto:sales@alpacgroup.com" className="text-red-600 hover:text-red-700">
-                          sales@alpacgroup.com
-                        </a>
+                      {/* Email */}
+                      <div className="flex items-center">
+                        <Mail className="w-5 h-5 mr-3 text-red-600" />
+                        <div>
+                          <div className="font-medium text-gray-800">Email</div>
+                          <a href="mailto:sales@alpacgroup.com" className="text-red-600 hover:text-red-700">
+                            sales@alpacgroup.com
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
               </div>
             </div>
 
