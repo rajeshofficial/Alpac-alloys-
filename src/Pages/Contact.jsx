@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import { Phone, Mail } from 'lucide-react';
-import image from '../assets/sample1.png'
+import image from '../assets/sample1.pngs'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -302,7 +302,7 @@ const handleSubmit = async (e) => {
 
 
               <p className="text-sm text-gray-600 text-center">
-                * Required fields. We typically respond within 24 hours.
+                * Required fields. We typically respond within 24 hours of working days .
               </p>
             </form>
           </div>
