@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import { Phone, Mail } from 'lucide-react';
-import image from '../assets/sample1.pngs'
+import image from  '../assets/sample1.png'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
