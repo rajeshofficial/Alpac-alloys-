@@ -271,22 +271,24 @@ const TechnicalData = () => {
           <th className="border p-2">USA</th>
         </tr>
       </thead>
-      <tbody>
-        {[
-          ["LM0", "", "", "", ""],
-          ["LM6", "AlSi12", "G-AlSi12 / DIN231", "AS13", "A413"],
-          ["LM25", "AlSi7Mg", "G-AlSi8Mg", "", "A356.1"],
-          ["LM27", "AlSi5Cu3", "", "", ""],
-          ["LM13", "", "", "", ""],
-          ["LM16", "", "", "", ""],
-        ].map((row, i) => (
-          <tr key={i} className={i % 2 === 0 ? "bg-gray-50" : ""}>
-            {row.map((cell, j) => (
-              <td key={j} className="border p-2">{cell}</td>
-            ))}
-          </tr>
-        ))}
-      </tbody>
+      <tbody> 
+  {[
+    ["LM0", "", "", "", ""],
+    ["LM6", "AlSi12", "G-AlSi12 / DIN231", "AS13", "A413"],
+    ["LM25", "AlSi7Mg", "G-AlSi8Mg", "", "A356.1"],
+    ["LM27", "AlSi5Cu3", "", "", ""],
+    ["LM13", "AlSi12Cu1(Fe)", "G-AlSi12Cu1(Fe)", "AC2A", "319.0"],
+    ["LM16", "", "", "", ""],
+    ["LM31", "AlSi5MgCr", "G-AlSi5MgCr", "", ""],
+  ].map((row, i) => (
+    <tr key={i} className={i % 2 === 0 ? "bg-gray-50" : ""}>
+      {row.map((cell, j) => (
+        <td key={j} className="border p-2">{cell}</td>
+      ))}
+    </tr>
+  ))}
+</tbody>
+
     </table>
   </div>
 </div>
@@ -296,40 +298,43 @@ const TechnicalData = () => {
 <div className="bg-white p-8 rounded-lg shadow-sm mb-8">
   <h2 className="text-2xl font-bold text-gray-800 mb-6">Element Composition (%)</h2>
   <div className="overflow-x-auto">
-    <table className="w-full border border-gray-300 text-sm">
-      <thead className="bg-gray-100">
-        <tr>
-          <th className="border p-2">Element</th>
-          <th className="border p-2">LM4</th>
-          <th className="border p-2">LM6</th>
-          <th className="border p-2">LM25</th>
-          <th className="border p-2">LM27</th>
-          <th className="border p-2">LM0</th>
-          <th className="border p-2">LM16</th>
-        </tr>
-      </thead>
-      <tbody>
-        {[
-          ["Copper (Cu)", "2.0 – 4.0", "0.1 max", "0.20 max", "1.5 – 2.5", "0.03", "1.0 – 1.5"],
-          ["Magnesium (Mg)", "0.2 max", "0.10 max", "0.20 – 0.6", "0.35 max", "0.03", "0.4 – 0.6"],
-          ["Silicon (Si)", "4.0 – 6.0", "10.0 – 13.0", "6.5 – 7.5", "6.0 – 8.0", "0.30", "4.5 – 5.5"],
-          ["Iron (Fe)", "0.8 max", "0.6 max", "0.5 max", "0.8 max", "0.40", "0.6"],
-          ["Manganese (Mn)", "0.2 – 0.6", "0.5 max", "0.3 max", "0.2 – 0.6", "0.03", "0.5"],
-          ["Nickel (Ni)", "0.3 max", "0.1 max", "0.1 max", "0.3 max", "0.03", "0.25"],
-          ["Zinc (Zn)", "0.5 max", "0.1 max", "0.1 max", "1.0 max", "0.07", "0.1"],
-          ["Lead (Pb)", "0.1 max", "0.1 max", "0.1 max", "0.2 max", "0.03", "0.1"],
-          ["Tin (Sn)", "0.1 max", "0.05 max", "0.05 max", "0.1 max", "0.03", "0.05"],
-          ["Titanium (Ti)", "0.2 max", "0.2 max", "0.2 max", "0.2 max", "-", "0.2"],
-          ["Aluminium (Al)", "Remainder", "Remainder", "Remainder", "Remainder", "Remainder", "Remainder"],
-        ].map((row, i) => (
-          <tr key={i} className={i % 2 === 0 ? "bg-gray-50" : ""}>
-            {row.map((cell, j) => (
-              <td key={j} className="border p-2">{cell}</td>
-            ))}
-          </tr>
+  <table className="w-full border border-gray-300 text-sm">
+  <thead className="bg-gray-100">
+    <tr>
+      <th className="border p-2">Element</th>
+      <th className="border p-2">LM4</th>
+      <th className="border p-2">LM6</th>
+      <th className="border p-2">LM25</th>
+      <th className="border p-2">LM27</th>
+      <th className="border p-2">LM0</th>
+      <th className="border p-2">LM13</th>
+      <th className="border p-2">LM31</th>
+    </tr>
+  </thead>
+  <tbody>
+    {[
+      ["Copper (Cu)", "2.0 – 4.0", "0.1 max", "0.20 max", "1.5 – 2.5", "0.03", "0.7 – 1.5", "0.25"],
+      ["Magnesium (Mg)", "0.2 max", "0.10 max", "0.20 – 0.6", "0.35 max", "0.03", "0.5", "0.5 – 0.75"],
+      ["Silicon (Si)", "4.0 – 6.0", "10.0 – 13.0", "6.5 – 7.5", "6.0 – 8.0", "0.30", "10.0 – 13.0", "4.8 – 5.7"],
+      ["Iron (Fe)", "0.8 max", "0.6 max", "0.5 max", "0.8 max", "0.40", "1.0 max", "0.1"],
+      ["Manganese (Mn)", "0.2 – 0.6", "0.5 max", "0.3 max", "0.2 – 0.6", "0.03", "0.5 max", "0.1"],
+      ["Nickel (Ni)", "0.3 max", "0.1 max", "0.1 max", "0.3 max", "0.03", "0.5", "-"],
+      ["Zinc (Zn)", "0.5 max", "0.1 max", "0.1 max", "1.0 max", "0.07", "-", "4.8-5.7"],
+      ["Lead (Pb)", "0.1 max", "0.1 max", "0.1 max", "0.2 max", "0.03", "-", "0.05"],
+      ["Tin (Sn)", "0.1 max", "0.05 max", "0.05 max", "0.1 max", "0.03", "0.1 max", "0.05 max"],
+      ["Titanium (Ti)", "0.2 max", "0.2 max", "0.2 max", "0.2 max", "-", "1.5 max", "0.1 max"],
+      ["Chromium (Cr)", "-", "-", "-", "-", "-", "-", "0.4 – 0.6"],
+      ["Aluminium (Al)", "Remainder", "Remainder", "Remainder", "Remainder", "Remainder", "Remainder", "Remainder"],
+    ].map((row, i) => (
+      <tr key={i} className={i % 2 === 0 ? "bg-gray-50" : ""}>
+        {row.map((cell, j) => (
+          <td key={j} className="border p-2">{cell}</td>
         ))}
-      </tbody>
-    </table>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
   </div>
 </div>
 
