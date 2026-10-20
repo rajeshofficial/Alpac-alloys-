@@ -8,7 +8,7 @@ const TechnicalData = () => {
         <div className="bg-white p-8 rounded-lg shadow-sm mb-8">
           <p className="text-gray-600 text-lg leading-relaxed">
             Our technical specifications ensure consistent quality and performance across all casting processes.
-            Use this data to optimize your designs for aluminum casting and achieve the best results.
+            Use this data to optimize your designs for aluminium casting and achieve the best results.
           </p>
         </div>
 
@@ -169,7 +169,7 @@ const TechnicalData = () => {
 
 
 
-        
+
 
         {/* Heat Treatment Options */}
         <div className="bg-white p-8 rounded-lg shadow-sm mb-8">
@@ -222,7 +222,7 @@ const TechnicalData = () => {
                 </li>
                 <li className="flex items-start">
                   <span className="text-red-600 mr-2">•</span>
-                  <strong>ASTM B26</strong> - Standard specification for aluminum-alloy sand castings
+                  <strong>ASTM B26</strong> - Standard specification for aluminium-alloy sand castings
                 </li>
                 <li className="flex items-start">
                   <span className="text-red-600 mr-2">•</span>
@@ -271,7 +271,7 @@ const TechnicalData = () => {
           <th className="border p-2">USA</th>
         </tr>
       </thead>
-      <tbody> 
+      <tbody>
   {[
     ["LM0", "", "", "", ""],
     ["LM6", "AlSi12", "G-AlSi12 / DIN231", "AS13", "A413"],
@@ -670,7 +670,7 @@ const TechnicalData = () => {
 
         {/* Material Properties */}
         {/* <div className="bg-white p-8 rounded-lg shadow-sm mb-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">Aluminum Alloy Properties</h2>
+          <h2 className="text-2xl font-bold text-gray-800 mb-6">Aluminium Alloy Properties</h2>
           <div className="overflow-x-auto">
             <table className="w-full border-collapse border border-gray-300">
               <thead>

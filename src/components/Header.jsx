@@ -1,141 +1,40 @@
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { FiMenu, FiX } from 'react-icons/fi';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import logo1 from '../assets/logo1.png'
+import { useEffect, useRef, useState } from 'react';
+import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Menu, X, Phone, ArrowUpRight } from 'lucide-react';
+import logo from '../assets/logo1.png';
 
-const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const links = [
+  ['/processes', 'Processes'], ['/technical-data', 'Capabilities'],
+  ['/industries', 'Industries'], ['/quality', 'Quality'], ['/about-us', 'About'],
+];
 
-  const toggleMenu = () => setIsOpen(!isOpen);
-
-  useEffect(() => {
-    AOS.init({ duration: 700, once: true });
-  }, []);
-
+export default function Header() {
+  const [open, setOpen] = useState(false);
+  const location = useLocation();
+  const toggle = useRef(null);
+  useEffect(() => { setOpen(false); }, [location]);
   return (
-    <div className="bg-white border-b">
-      <div className="max-w-8xl mx-auto">
-        <div className="flex items-center justify-between py-4 px-4 sm:px-6">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <Link to="/">
-              <img
-                src={logo1}
-                alt="Alpac Alloys Ltd"
-                className="h-14 sm:h-16"
-              />
-            </Link>
-          </div>
-
-          {/* Mobile Toggle Button */}
-          <div className="md:hidden">
-            <button
-              onClick={toggleMenu}
-              className="text-gray-700 hover:text-gray-900 focus:outline-none"
-            >
-              {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-            </button>
-          </div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
-            <nav className="flex space-x-6">
-              <Link
-                to="/"
-                className="text-gray-600 hover:text-gray-900 text-sm font-medium"
-                data-aos="fade-up"
-              >
-                Home
-              </Link>
-              <Link
-                to="/about-us"
-                className="text-gray-600 hover:text-gray-900 text-sm font-medium"
-                data-aos="fade-up"
-              >
-                About Us
-              </Link>
-              <Link
-                to="/testimonials"
-                className="text-gray-600 hover:text-gray-900 text-sm font-medium"
-                data-aos="fade-up"
-              >
-                Testimonials
-              </Link>
-              <Link
-                to="/contact-us"
-                className="text-gray-600 hover:text-gray-900 text-sm font-medium"
-                data-aos="fade-up"
-              >
-                Contact Us
-              </Link>
-            </nav>
-          </div>
-
-          {/* Contact Info (hidden on small) */}
-          <div className="hidden lg:flex flex-col text-right text-sm text-gray-600 space-y-1">
-            <div>
-              <span className="font-medium">Teliphone:</span>{' '}
-              <a href="tel:+441283567737" className="hover:text-gray-900">
-                +44 (0) 1283 567737
-              </a>
-            </div>
-            {/* <div>
-              <span className="font-medium">F:</span>{' '}
-              <span>+44 (0) 1283 512359</span>
-            </div> */}
-            <div>
-              <span className="font-medium">Email:</span>{' '}
-              <a href="mailto:sales@alpacgroup.com" className="hover:text-gray-900">
-                sales@alpacgroup.com
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile Navigation Menu */}
-        {isOpen && (
-          <div className="md:hidden px-4 pb-4">
-             <nav className="flex flex-col items-center text-center space-y-2">
-              <Link
-                to="/"
-                className="text-gray-600 hover:text-gray-900 text-sm font-medium"
-                onClick={toggleMenu}
-                data-aos="fade-up"
-              >
-                Home
-              </Link>
-              <Link
-                to="/about-us"
-                className="text-gray-600 hover:text-gray-900 text-sm font-medium"
-                onClick={toggleMenu}
-                data-aos="fade-up"
-              >
-                About Us
-              </Link>
-              <Link
-                to="/testimonials"
-                className="text-gray-600 hover:text-gray-900 text-sm font-medium"
-                onClick={toggleMenu}
-                data-aos="fade-up"
-              >
-                Testimonials
-              </Link>
-              <Link
-                to="/contact-us"
-                className="text-gray-600 hover:text-gray-900 text-sm font-medium"
-                onClick={toggleMenu}
-                data-aos="fade-up"
-              >
-                Contact Us
-              </Link>
-            </nav>
-          </div>
-        )}
+    <header className="site-header" onKeyDown={event => {
+      if (event.key === 'Escape' && open) { setOpen(false); toggle.current?.focus(); }
+    }}>
+      <div className="header-inner">
+        <Link to="/" aria-label="Alpac Alloys — home" className="brand-link">
+          <img src={logo} alt="Alpac Alloys Ltd" width="230" height="64" />
+        </Link>
+        <nav aria-label="Main navigation" className="desktop-nav">
+          {links.map(([path, label]) => <NavLink key={path} to={path}>{label}</NavLink>)}
+        </nav>
+        <Link className="button button-red header-quote" to="/contact-us">Request a quote <ArrowUpRight size={17} aria-hidden="true" /></Link>
+        <button ref={toggle} type="button" className="menu-toggle" aria-label={open ? 'Close navigation' : 'Open navigation'} aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen(!open)}>
+          {open ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
+        </button>
       </div>
-    </div>
+      <nav id="mobile-navigation" hidden={!open} aria-label="Mobile navigation" className="mobile-nav">
+        {links.map(([path, label]) => <NavLink key={path} to={path}>{label}</NavLink>)}
+        <Link to="/testimonials">Testimonials</Link>
+        <Link to="/contact-us">Contact & request a quote</Link>
+        <a href="tel:+441283567737"><Phone size={16} aria-hidden="true" /> +44 (0) 1283 567737</a>
+      </nav>
+    </header>
   );
-};
-
-export default Header;
+}

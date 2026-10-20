@@ -1,98 +1,35 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useState } from 'react';
+import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
 
-const ImageSlider = ({ slides, autoPlay = true, interval = 5000, fullScreen = false }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const timerRef = useRef(null);
-
-  const resetAutoplay = () => {
-    if (autoPlay) {
-      clearInterval(timerRef.current);
-      timerRef.current = setInterval(() => {
-        setCurrentIndex((prevIndex) => (prevIndex === slides.length - 1 ? 0 : prevIndex + 1));
-      }, interval);
-    }
-  };
-
+export default function ImageSlider({ slides, autoPlay = false, interval = 5000, fullScreen = false }) {
+  const [current, setCurrent] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(false);
   useEffect(() => {
-    resetAutoplay();
-    return () => clearInterval(timerRef.current);
-  }, [autoPlay, interval, slides.length]);
-
-  const goToSlide = (index) => {
-    setCurrentIndex(index);
-    resetAutoplay();
-  };
-
-  const goToPrevious = () => {
-    setCurrentIndex(currentIndex === 0 ? slides.length - 1 : currentIndex - 1);
-    resetAutoplay();
-  };
-
-  const goToNext = () => {
-    setCurrentIndex(currentIndex === slides.length - 1 ? 0 : currentIndex + 1);
-    resetAutoplay();
-  };
-
-  if (slides.length === 0) return null;
-
-  const containerClass = fullScreen
-    ? 'relative w-full h-full overflow-hidden'
-    : 'relative w-full h-80 md:h-96 overflow-hidden rounded-lg shadow-lg';
-
-  return (
-    <div className={containerClass}>
-      <div
-        className="flex transition-transform duration-1000 ease-in-out h-full"
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-      >
-        {slides.map((slide, index) => (
-          <div key={`slide-${slide.title}-${index}`} className="w-full h-full flex-shrink-0 relative">
-            <img src={slide.image} alt={slide.title} className="w-full h-full object-cover" />
-            {!fullScreen && slide.caption && (
-              <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
-                <p className="text-lg font-medium">{slide.caption}</p>
-              </div>
-            )}
-          </div>
-        ))}
+    const query = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const update = () => setReducedMotion(query.matches);
+    update(); query.addEventListener('change', update);
+    return () => query.removeEventListener('change', update);
+  }, []);
+  useEffect(() => {
+    if (!autoPlay || paused || reducedMotion || slides.length < 2) return;
+    const timer = setInterval(() => setCurrent(index => (index + 1) % slides.length), interval);
+    return () => clearInterval(timer);
+  }, [autoPlay, paused, reducedMotion, slides.length, interval]);
+  const index = Math.min(current, Math.max(0, slides.length - 1));
+  if (!slides.length) return null;
+  const slide = slides[index];
+  const move = direction => { setPaused(true); setCurrent((index + direction + slides.length) % slides.length); };
+  return <section aria-label="Company and casting photographs" aria-roledescription="carousel" className={fullScreen ? 'hero-image hero-slider' : 'relative overflow-hidden h-80 md:h-96 rounded-lg'}>
+    <img key={slide.image} src={slide.image} srcSet={slide.srcSet} sizes="100vw" alt={slide.title} fetchPriority={index === 0 ? 'high' : 'auto'} className="slider-photo w-full h-full object-cover" />
+    <p className={fullScreen ? 'hero-slide-caption' : 'absolute inset-x-0 bottom-0 bg-black/70 text-white p-4'}>{slide.caption}</p>
+    {slides.length > 1 && <div className="slider-controls" aria-label="Slideshow controls">
+      <button type="button" aria-label="Previous photograph" onClick={() => move(-1)}><ChevronLeft size={18} aria-hidden="true" /></button>
+      <div className="slider-dots">
+        {slides.map((item, number) => <button key={item.title} type="button" aria-label={`Show photograph ${number + 1}: ${item.title}`} aria-pressed={number === index} onClick={() => { setCurrent(number); setPaused(true); }}><span className={number === index ? 'is-active' : ''} /></button>)}
       </div>
-
-      {slides.length > 1 && (
-        <>
-          <button
-            onClick={goToPrevious}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-70 transition-all cursor-pointer"
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-          <button
-            onClick={goToNext}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-70 transition-all cursor-pointer"
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-        </>
-      )}
-
-      {slides.length > 1 && (
-        <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
-          {slides.map((_, index) => (
-            <div
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`cursor-pointer w-6 rounded-full transition-all duration-300 ${
-                index === currentIndex ? 'h-2 bg-blue-500 shadow-md' : 'h-1.5 bg-white bg-opacity-40'
-              }`}
-            ></div>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-};
-
-export default ImageSlider;
+      <button type="button" aria-label="Next photograph" onClick={() => move(1)}><ChevronRight size={18} aria-hidden="true" /></button>
+      {autoPlay && !reducedMotion && <button type="button" aria-label={paused ? 'Play slideshow' : 'Pause slideshow'} onClick={() => setPaused(!paused)}>{paused ? <Play size={16} aria-hidden="true" /> : <Pause size={16} aria-hidden="true" />}</button>}
+    </div>}
+  </section>;
+}

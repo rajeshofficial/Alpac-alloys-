@@ -14,7 +14,7 @@ const Processes = () => {
 
         {/* Sand Casting */}
         <div className="bg-white p-8 rounded-lg shadow-sm mb-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">Sand Casting</h2>
+          <h2 id="sand-casting" className="text-2xl font-bold text-gray-800 mb-6">Sand Casting</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
               <h3 className="text-xl font-semibold text-gray-800 mb-4">Process Overview</h3>
@@ -78,7 +78,7 @@ const Processes = () => {
 
         {/* Gravity Die Casting */}
         <div className="bg-white p-8 rounded-lg shadow-sm mb-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">Gravity Die Casting</h2>
+          <h2 id="gravity-die-casting" className="text-2xl font-bold text-gray-800 mb-6">Gravity Die Casting</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
               <h3 className="text-xl font-semibold text-gray-800 mb-4">Process Overview</h3>
