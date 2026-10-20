@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Phone } from 'lucide-react';
-import castings640 from '../assets/slide4img-640.webp';
-import castings1280 from '../assets/slide4img-1280.webp';
-import castings1920 from '../assets/slide4img-1920.webp';
+import company640 from '../assets/sample1-640.webp';
+import company1280 from '../assets/sample1-1280.webp';
+import company1920 from '../assets/sample1-1920.webp';
 import pouring640 from '../assets/sample3-640.webp';
 import pouring1280 from '../assets/sample3-1280.webp';
 import pouring1920 from '../assets/sample3-1920.webp';
@@ -20,8 +20,8 @@ export default function Home() {
         <div className="hero-detail">Burton on Trent, UK <span aria-hidden="true">/</span> Prototypes & production</div>
       </div>
       <figure className="hero-image">
-        <img src={castings1280} srcSet={`${castings640} 640w, ${castings1280} 1280w, ${castings1920} 1920w`} sizes="(max-width: 900px) 100vw, 50vw" alt="A selection of aluminium cast components, including housings, brackets and flanges" fetchPriority="high" width="1280" height="853" />
-        <figcaption>Complex shapes. Practical manufacturing solutions.</figcaption>
+        <img src={company1280} srcSet={`${company640} 640w, ${company1280} 1280w, ${company1920} 1920w`} sizes="100vw" alt="Alpac Alloys company premises on Dale Street in Burton on Trent" fetchPriority="high" width="1280" height="960" />
+        <figcaption>Alpac Alloys Ltd · Dale Street, Burton on Trent</figcaption>
       </figure>
     </section>
 

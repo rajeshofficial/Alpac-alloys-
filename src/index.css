@@ -249,3 +249,30 @@ button:disabled { cursor: wait; opacity: .7; }
   .header-quote { font-size: 11px; padding: 10px; white-space: nowrap; }
   .menu-toggle { padding: 8px; }
 }
+
+/* The original company premises remain the first impression. */
+.home-hero { position: relative; display: flex; min-height: 650px; background: #25313d; isolation: isolate; }
+.hero-copy { position: relative; z-index: 2; width: min(760px, 67%); padding: 86px 48px 82px max(32px, calc((100vw - 1184px) / 2)); color: white; }
+.hero-copy h1 { font-size: clamp(40px, 4.3vw, 62px); }
+.hero-copy h1 span { color: #fff; }
+.hero-copy > p { color: #f0f2f4; max-width: 52ch; }
+.hero-copy .text-link { color: white; }
+.hero-copy .hero-detail { color: #e8ecef; }
+.hero-image { position: absolute; inset: 0; z-index: 0; }
+.hero-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(12,22,32,.89) 0%, rgba(12,22,32,.72) 42%, rgba(12,22,32,.17) 100%); }
+.hero-image img { object-position: center 58%; }
+.hero-image figcaption { z-index: 1; left: auto; bottom: 24px; right: 32px; background: rgba(12,22,32,.8); padding: 10px 14px; border-radius: 3px; font-size: 11px; }
+@media (max-width: 900px) {
+  .home-hero { min-height: 620px; }
+  .hero-copy { width: min(760px, 90%); padding: 64px 32px 90px; }
+  .hero-copy h1 { font-size: clamp(40px, 6.5vw, 58px); }
+  .hero-image::after { background: linear-gradient(90deg, rgba(12,22,32,.88), rgba(12,22,32,.42)); }
+}
+@media (max-width: 700px) {
+  .home-hero { min-height: 640px; }
+  .hero-copy { width: 100%; padding: 46px 20px 90px; }
+  .hero-copy h1 { font-size: 40px; }
+  .hero-image img { object-position: 62% center; }
+  .hero-image::after { background: rgba(12,22,32,.73); }
+  .hero-image figcaption { left: 20px; right: auto; bottom: 18px; padding: 8px 10px; font-size: 10px; }
+}

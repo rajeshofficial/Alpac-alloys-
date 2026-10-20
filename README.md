@@ -30,7 +30,7 @@ Do not deploy source files, `.env` files, or `node_modules`. Configure the publi
 
 ## Changes in this update
 
-- Product-led homepage using existing component and pouring photographs, responsive WebP images, and a primary quotation action.
+- Product-led homepage retaining the original company premises photograph as a full-width hero, with responsive WebP images, a pouring photograph and a primary quotation action.
 - Consolidated desktop navigation, mobile menu with accessible state and Escape dismissal, skip link, visible focus, and reduced motion support.
 - Quote form near the top of the contact page, autocomplete, visible pending/success/error states, duplicate-submit protection, request timeout and recoverable errors. Failed submissions retain their fields.
 - Existing Web3Forms transport retained. No upload endpoint added. Drawing instructions link to the existing sales email address.
