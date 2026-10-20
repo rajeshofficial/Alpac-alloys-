@@ -276,3 +276,22 @@ button:disabled { cursor: wait; opacity: .7; }
   .hero-image::after { background: rgba(12,22,32,.73); }
   .hero-image figcaption { left: 20px; right: auto; bottom: 18px; padding: 8px 10px; font-size: 10px; }
 }
+
+.hero-copy { pointer-events: none; }
+.hero-copy a { pointer-events: auto; }
+.hero-image::after { pointer-events: none; z-index: 1; }
+.hero-slide-caption { position: absolute; z-index: 2; left: 32px; bottom: 24px; color: white; font-size: 11px; padding: 10px 14px; background: rgba(12,22,32,.8); border-radius: 3px; }
+.slider-controls { position: absolute; bottom: 22px; right: 32px; z-index: 3; display: flex; align-items: center; padding: 2px; color: white; background: rgba(12,22,32,.9); border-radius: 4px; }
+.slider-controls button { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; }
+.slider-controls button:hover { background: rgba(255,255,255,.15); }
+.slider-dots { display: flex; }
+.slider-dots button { width: 32px; }
+.slider-dots span { width: 6px; height: 6px; background: #cbd0d4; border-radius: 50%; }
+.slider-dots .is-active { width: 18px; border-radius: 4px; background: white; }
+.slider-photo { animation: slide-appear .5s ease-out; }
+@keyframes slide-appear { from { opacity: .4; } to { opacity: 1; } }
+@media (max-width: 700px) {
+  .hero-slide-caption { display: none; }
+  .slider-controls { right: 20px; bottom: 18px; }
+  .hero-copy { padding-bottom: 100px; }
+}

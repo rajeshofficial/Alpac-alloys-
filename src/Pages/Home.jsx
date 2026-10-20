@@ -1,11 +1,23 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Phone } from 'lucide-react';
+import ImageSlider from '../components/ImageSlider';
+import components from '../assets/slide4img.jpeg';
+import castings from '../assets/slide4i.jpeg';
+import profiles from '../assets/a1.jpeg';
 import company640 from '../assets/sample1-640.webp';
 import company1280 from '../assets/sample1-1280.webp';
 import company1920 from '../assets/sample1-1920.webp';
 import pouring640 from '../assets/sample3-640.webp';
 import pouring1280 from '../assets/sample3-1280.webp';
 import pouring1920 from '../assets/sample3-1920.webp';
+
+const heroSlides = [
+  { image: company1280, srcSet: `${company640} 640w, ${company1280} 1280w, ${company1920} 1920w`, title: 'Alpac Alloys company premises on Dale Street in Burton on Trent', caption: 'Alpac Alloys Ltd · Burton on Trent' },
+  { image: components, title: 'A selection of aluminium cast components', caption: 'Aluminium casting components' },
+  { image: pouring1280, srcSet: `${pouring640} 640w, ${pouring1280} 1280w, ${pouring1920} 1920w`, title: 'Molten metal being poured into a sand mould', caption: 'Sand casting' },
+  { image: castings, title: 'Aluminium housings and cast components', caption: 'Component manufacturing' },
+  { image: profiles, title: 'Finished aluminium profiles and components', caption: 'From prototype to production' },
+];
 
 export default function Home() {
   return <div className="home-page">
@@ -19,10 +31,7 @@ export default function Home() {
         </div>
         <div className="hero-detail">Burton on Trent, UK <span aria-hidden="true">/</span> Prototypes & production</div>
       </div>
-      <figure className="hero-image">
-        <img src={company1280} srcSet={`${company640} 640w, ${company1280} 1280w, ${company1920} 1920w`} sizes="100vw" alt="Alpac Alloys company premises on Dale Street in Burton on Trent" fetchPriority="high" width="1280" height="960" />
-        <figcaption>Alpac Alloys Ltd · Dale Street, Burton on Trent</figcaption>
-      </figure>
+      <ImageSlider slides={heroSlides} autoPlay interval={6000} fullScreen />
     </section>
 
     <section className="process-section page-width" aria-labelledby="process-title">
