@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+
 import b1 from '../assets/b1.jpeg';
 import b2 from '../assets/b2.jpeg';
 import b3 from '../assets/b3.jpeg';
@@ -7,16 +7,13 @@ import b5 from '../assets/b5.jpeg';
 import b6 from '../assets/b6.jpeg';
 
 const Industries = () => {
-  useEffect(() => {
-    // Inject smooth scroll behavior to html tag
-    document.documentElement.style.scrollBehavior = 'smooth';
-  }, []);
+
 
   const industries = [
     {
       title: "Transport",
       image: b1,
-      description: "Lightweight, durable aluminum castings for automotive, rail, and commercial vehicle applications.",
+      description: "Lightweight, durable aluminium castings for automotive, rail, and commercial vehicle applications.",
       applications: [
         "Engine components and cylinder heads",
         "Transmission housings and gearboxes",
@@ -35,7 +32,7 @@ const Industries = () => {
     {
       title: "Marine and Offshore",
       image: b2,
-      description: "Corrosion-resistant aluminum castings designed to withstand harsh marine environments.",
+      description: "Corrosion-resistant aluminium castings designed to withstand harsh marine environments.",
       applications: [
         "Propeller housings and struts",
         "Engine blocks and cylinder heads",
@@ -53,7 +50,7 @@ const Industries = () => {
     {
       title: "Architectural",
       image: b3,
-      description: "Precision aluminum castings for architectural and construction applications requiring aesthetic appeal.",
+      description: "Precision aluminium castings for architectural and construction applications requiring aesthetic appeal.",
       applications: [
         "Decorative façade elements",
         "Structural brackets and connectors",
@@ -71,7 +68,7 @@ const Industries = () => {
     {
       title: "Process Industries",
       image: b4,
-      description: "High-performance aluminum castings for chemical processing, food production, and manufacturing.",
+      description: "High-performance aluminium castings for chemical processing, food production, and manufacturing.",
       applications: [
         "Pump and valve bodies",
         "Heat exchanger components",
@@ -89,7 +86,7 @@ const Industries = () => {
     {
       title: "Energy",
       image: b5,
-      description: "Reliable aluminum castings for renewable energy, oil & gas, and power generation applications.",
+      description: "Reliable aluminium castings for renewable energy, oil & gas, and power generation applications.",
       applications: [
         "Wind turbine components",
         "Solar panel mounting systems",
@@ -107,7 +104,7 @@ const Industries = () => {
     {
       title: "Defence",
       image: b6,
-      description: "Mission-critical aluminum castings meeting stringent military and defense specifications.",
+      description: "Mission-critical aluminium castings meeting stringent military and defense specifications.",
       applications: [
         "Weapon system components",
         "Vehicle armor brackets",
@@ -132,7 +129,7 @@ const Industries = () => {
         {/* Introduction */}
         <div className="bg-white p-8 rounded-lg shadow-sm mb-8">
           <p className="text-gray-600 text-lg leading-relaxed mb-6">
-            Alpac Alloys has over 40 years of experience serving diverse industries with precision aluminum castings.
+            Alpac Alloys has over 40 years of experience serving diverse industries with precision aluminium castings.
             Our expertise spans multiple sectors, each with unique requirements and challenges that we meet with
             specialized solutions and industry-specific knowledge.
           </p>
@@ -245,14 +242,8 @@ const Industries = () => {
               <div className="text-lg font-semibold text-gray-800 mb-2">ISO 9001:2015</div>
               <div className="text-gray-600 text-sm">Quality Management</div>
             </div>
-            <div className="text-center p-4 border border-gray-200 rounded-lg">
-              <div className="text-lg font-semibold text-gray-800 mb-2">AS9100</div>
-              <div className="text-gray-600 text-sm">Aerospace Quality</div>
-            </div>
-            <div className="text-center p-4 border border-gray-200 rounded-lg">
-              <div className="text-lg font-semibold text-gray-800 mb-2">IATF 16949</div>
-              <div className="text-gray-600 text-sm">Automotive Quality</div>
-            </div>
+
+
             <div className="text-center p-4 border border-gray-200 rounded-lg">
               <div className="text-lg font-semibold text-gray-800 mb-2">MIL-STD</div>
               <div className="text-gray-600 text-sm">Military Standards</div>

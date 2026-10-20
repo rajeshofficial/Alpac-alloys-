@@ -10,7 +10,7 @@ const Export = () => {
             <div>
               <h2 className="text-2xl font-bold text-gray-800 mb-6">Serving Customers Worldwide</h2>
               <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                Alpac Alloys has been exporting precision aluminum castings globally for over 30 years.
+                Alpac Alloys has been exporting precision aluminium castings globally for over 30 years.
                 Our experienced export team handles all aspects of international trade, ensuring your
                 castings reach you safely and on time, anywhere in the world.
               </p>
@@ -301,9 +301,9 @@ const Export = () => {
               <h3 className="text-xl font-semibold text-gray-800 mb-4">HS Codes & Classification</h3>
               <div className="space-y-4">
                 <div className="bg-gray-50 p-4 rounded-lg">
-                  <h4 className="font-semibold text-gray-800 mb-2">Aluminum Castings</h4>
+                  <h4 className="font-semibold text-gray-800 mb-2">Aluminium Castings</h4>
                   <ul className="text-gray-600 space-y-2 text-sm">
-                    <li><strong>7616.99.90</strong> - Other articles of aluminum (general castings)</li>
+                    <li><strong>7616.99.90</strong> - Other articles of aluminium (general castings)</li>
                     <li><strong>8708.99.97</strong> - Motor vehicle parts (automotive castings)</li>
                     <li><strong>8803.30.00</strong> - Aircraft parts (aerospace castings)</li>
                     <li><strong>8421.99.90</strong> - Machinery parts (industrial equipment)</li>

@@ -78,11 +78,11 @@ const Quality = () => {
                 </li>
                 <li className="flex items-start">
                   <span className="text-red-600 mr-3 mt-1">✓</span>
-                  <span><strong>ASTM B26/B26M</strong> - Aluminum-alloy sand castings</span>
+                  <span><strong>ASTM B26/B26M</strong> - Aluminium-alloy sand castings</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-red-600 mr-3 mt-1">✓</span>
-                  <span><strong>ASTM B108</strong> - Aluminum-alloy permanent mold castings</span>
+                  <span><strong>ASTM B108</strong> - Aluminium-alloy permanent mold castings</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-red-600 mr-3 mt-1">✓</span>
